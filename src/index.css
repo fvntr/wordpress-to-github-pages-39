@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Full Spectrum Labs Design System - Blue/Teal/Gold palette */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 25% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 25% 20%;
+
+    /* Deep teal/blue - primary brand color */
+    --primary: 195 70% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light blue-gray for backgrounds */
+    --secondary: 200 30% 96%;
+    --secondary-foreground: 210 25% 20%;
+
+    /* Gold/amber accent for CTAs */
+    --accent: 42 85% 55%;
+    --accent-foreground: 210 25% 15%;
+
+    --muted: 200 20% 94%;
+    --muted-foreground: 210 15% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 195 70% 35%;
+
+    --radius: 0.5rem;
+
+    /* Custom brand colors */
+    --teal: 180 50% 45%;
+    --teal-dark: 185 60% 30%;
+    --gold: 42 85% 55%;
+    --gold-dark: 38 80% 45%;
+    --navy: 210 60% 20%;
+    --sky: 200 80% 65%;
+
+    /* Gradients */
+    --gradient-text: linear-gradient(135deg, hsl(195 70% 35%), hsl(180 50% 45%), hsl(42 85% 55%));
+    --gradient-hero: linear-gradient(180deg, hsla(0, 0%, 100%, 0.95) 0%, hsla(0, 0%, 100%, 0.7) 50%, hsla(0, 0%, 100%, 0) 100%);
+    --gradient-section: linear-gradient(135deg, hsl(210 60% 20%) 0%, hsl(195 70% 35%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 195 70% 35%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 200 30% 96%;
+    --sidebar-accent-foreground: 210 25% 20%;
+    --sidebar-border: 200 20% 88%;
+    --sidebar-ring: 195 70% 35%;
+  }
+
+  .dark {
+    --background: 210 60% 8%;
+    --foreground: 200 20% 95%;
+
+    --card: 210 50% 12%;
+    --card-foreground: 200 20% 95%;
+
+    --popover: 210 50% 12%;
+    --popover-foreground: 200 20% 95%;
+
+    --primary: 195 70% 50%;
+    --primary-foreground: 210 60% 8%;
+
+    --secondary: 210 40% 18%;
+    --secondary-foreground: 200 20% 95%;
+
+    --accent: 42 85% 55%;
+    --accent-foreground: 210 60% 8%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 200 20% 70%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 200 20% 95%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 195 70% 50%;
+
+    --sidebar-background: 210 50% 10%;
+    --sidebar-foreground: 200 20% 95%;
+    --sidebar-primary: 195 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 18%;
+    --sidebar-accent-foreground: 200 20% 95%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 195 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(195 70% 35%), hsl(180 50% 45%), hsl(42 85% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-sweep {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-sweep::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .btn-sweep:hover::before {
+    left: 100%;
+  }
+}
